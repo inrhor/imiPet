@@ -1,0 +1,32 @@
+# 基本值
+basis:
+  display:
+    # 默认的宠物名称
+    name: "小天使"
+    # 名称格式
+    format: "&7[&6主人：&f%imipet_owner%&7] &f%imipet_name%"
+    # 是否显示名称
+    show: true
+    # 全息
+    hologram:
+      # 显示名称Y轴
+      height: 2
+      # 显示名称X轴
+      x: 0
+      # 显示名称Z轴
+      z: 0
+      formatList:
+        - "&7[&6主人：&f%imipet_owner%&7][&flv.%imipet_level%&7]"
+        - "&f%imipet_name%"
+        - "&c血量 &f%imipet_nowhp%&7/&f%imipet_maxhp%"
+  # 初始血量
+  HP: 20
+  # 初始伤害范围
+  minDamage: 2
+  maxDamage: 6
+  # 初始活力值
+  food: 20
+  # 初始最极经验值
+  exp: 100
+  # 等级上限
+  level: 100

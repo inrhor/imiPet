@@ -1,0 +1,51 @@
+# Unique ID of the model
+modelId: "test"
+
+# About the ModelEngine plugin
+modelEngine:
+  use: false
+  animation:
+    # attack state
+    attack:
+      # How many ticks to make the animation restart
+      retime: 100
+      # Attack action time, tick
+      stopTime: 100
+    # Gui model show
+    gui:
+      # item Name
+      itemName: "§8"
+      # custom model data，Only support minecraft-1.14+
+      customModelData: 10000
+      # Item material, default diamond_hoe if none
+      material: "DIAMOND_HOE"
+
+# About models and dynamic models
+# If ModelEngine plugin is not enabled
+animation:
+  # About model location
+  location:
+    # Display height
+    h: 1
+  # idle state
+  idle:
+    itemName: "§8"
+    customModelData: 10000
+    material: "DIAMOND_HOE"
+  # walk state
+  walk:
+    itemName: "§a"
+    customModelData: 10001
+    material: "DIAMOND_HOE"
+  # attack state
+  attack:
+    itemName: "§5"
+    customModelData: 10002
+    material: "DIAMOND_HOE"
+    # Display the dynamic duration of the attack action, in seconds
+    time: 5
+
+# Other
+entity:
+  # Whether the real entity is visible, invisible by default
+  visible: false

@@ -1,0 +1,21 @@
+# Other attributes
+# The built-in attribute system is still effective
+# Including the updated formula value, unless set to 0
+dependAttribute:
+  # AttributePlus Plugin
+  ap:
+    enable: false
+    # Initial attribute, and will be stored in YAML/MYSQL
+    basis:
+      - "life： 30"
+    # The attribute changes after the upgrade will be stored in YAML/MYSQL at the same time
+    # Format  formula|initialValue
+    # JavaScriptMath：https://www.runoob.com/jsref/jsref-obj-math.html
+    # value_now  Is the value
+    # min_now  Is ~ The front value
+    # max_now  Is ~ The back value
+    # Use ~ Make sure that the initial value contains ~
+    # | Split flag
+    levelUp:
+      - "life： value_now+2|30"
+      - "attack： min_now+1~max_now+10|4~8"

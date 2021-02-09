@@ -1,0 +1,30 @@
+basis:
+  display:
+    # Default pet name
+    name: "angel"
+    # Name format
+    format: "&7[&6Owner：&f%imipet_owner%&7] &f%imipet_name%"
+    # Whether to display the name
+    show: true
+    # Optional：hd，tr, cmi
+    useShow: hd
+    # hologram
+    hologram:
+      height: 2
+      x: 0
+      z: 0
+      formatList:
+        - "&7[&6Owner：&f%imipet_owner%&7][&flv.%imipet_level%&7]"
+        - "&f%imipet_name%"
+        - "&cHP &f%imipet_nowhp%&7/&f%imipet_maxhp%"
+  # Initial HP
+  HP: 20
+  # Initial damage range
+  minDamage: 2
+  maxDamage: 6
+  # Initial Food
+  food: 20
+  # Initial Max Exp
+  exp: 100
+  # Level limit
+  level: 100

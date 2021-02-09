@@ -1,0 +1,18 @@
+# About BUFF
+buff:
+  # BUFF attribute
+  attribute:
+    enable: false
+    # Which attribute plugin to use, optional: ap
+    use: ap
+    # AttributePlus Plugin
+    # Format："Whether only the owner gets the BUFF;BUFF effective range;Default attributes;Can it be strengthened after the upgrade;Attribute change formula after upgrade"
+    # JavaScriptMath：https://www.runoob.com/jsref/jsref-obj-math.html
+    # value_now  Is the value
+    # min_now  Is ~ The front value
+    # max_now  Is ~ The back value
+    # Use ~ Make sure that the initial value contains ~
+    ap:
+      - "true;5;attack：3.0~26.0;true;attack： min_now+1~max_now+10"
+      - "true;10;life： +5;false;null"
+      - "false;10;defense：+3;true;defense：value_now+1"

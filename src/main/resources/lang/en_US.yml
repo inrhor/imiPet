@@ -1,0 +1,344 @@
+LOADER:
+  INFO:
+    - "&7&l[ &c&li &7&l]&r  ┝  &3Plugin  &f{1}"
+    - "&7&l[ &c&li &7&l]&r  ┝  &3Version  &f{2}"
+    - "&7&l[ &c&li &7&l]&r  ┝  &3Language  &f{3}"
+    - "&7&l[ &c&li &7&l]&r  ┝  &3Data storage method  &f{4}"
+    - "&7&l[ &c&li &7&l]&r  ┝  &6Check softLib"
+  PLUGIN:
+    ENABLE: "&aYES"
+    DISABLE: "&cNO"
+    PlaceholderAPI: "&7&l[ &c&li &7&l]&r  ┝  &fPlaceholderAPI  {0}"
+    Vault: "&7&l[ &c&li &7&l]&r  ┝  &fVault  {0}"
+    HolographicDisplays: "&7&l[ &c&li &7&l]&r  ┝  &fHolographicDisplays  {0}"
+    TrHologram: "&7&l[ &c&li &7&l]&r  ┝  &fTrHologram {0}"
+    CMI: "&7&l[ &c&li &7&l]&r  ┝  &fCMI  {0}"
+    AttributePlus: "&7&l[ &c&li &7&l]&r  ┝  &fAttributePlus  {0}"
+    MythicMobs: "&7&l[ &c&li &7&l]&r  ┝  &fMythicMobs  {0}"
+    ModelEngine: "&7&l[ &c&li &7&l]&r  ┝  &fModelEngine  {0}"
+    VexView: "&7&l[ &c&li &7&l]&r  ┝  &fVexView  {0}"
+
+COMMAND_DESCRIPTION:
+  RELOAD: "Reload configuration"
+  OPEN: "Open the imiPet GUI"
+  SKILL_OPEN: "Open the following pet Skill GUI"
+  TAKE_BACK: "Release pet"
+  PACK_LIST: "Show the list of the pet's backpack"
+  WAREHOUSE_LIST: "Show the list of the pet's depository"
+  PET_GIVE: "Give pet"
+  EXP_BOX_LOOK: "Show expbox's exps of a player"
+  EXP_BOX_SET: "Set exps of player's expbox"
+  EXP_BOX_ADD: "Give exps to a expbox of designated player's expbox"
+    EXP_BOX_DEL: "Deduct some exps from player's expbox"
+  FOLLOW: "Summon or take the pet back"
+  RIDE: "Ride pet"
+  RELEASE: "Release pet"
+  CURE: "Heal designated pet"
+  FOOD: "Feeding designated pet"
+  EVOLUTION: "Upgrade designated pets"
+  RENAME: "Give pet a new name"
+  INTO: "Take the designated depos's pet into your backpack"
+  TRANSFER: "Transfer pet to other players"
+  LOTTERY: "Start the pet lottery"
+  VAR:
+    MODEL_ID: "Model ID"
+    PLAYER: "Player"
+    PACK_SLOT: "Pet pack slot"
+    WAREHOUSE_SLOT: "Pet warhouse slot"
+    INT: "INT"
+    NEW_NAME: "New name"
+
+PACK:
+  NOT_EXIST_PACK_FILE:
+    - "&f"
+    - "&f   &7&l[&6&limiPet&7&l]"
+    - "&f   &cFolder does not exist &fmodels/{0}/pack"
+    - "&f   &cCannot automatically generate texture resource pack for this model"
+    - "&f"
+  NOT_EXIST_PACK_JSON:
+    - "&f"
+    - "&f   &7&l[&6&limiPet&7&l]"
+    - "&f   &cFile does not exist &fmodels/{0}/pack/{1}.json"
+    - "&f   &cCannot automatically generate texture resource pack for this model"
+    - "&f"
+
+
+
+COMMAND_NO_PERMISSION:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &CYou do not have permissions to do that."
+  - "&f"
+COMMAND_EXPBOX_LOOK:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f      Exps of the expbox: {0}"
+  - "&f"
+COMMAND_EXPBOX_LOOK_OP:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f      Exps of the player's expbox: {0}"
+  - "&f"
+COMMAND_PET_LIST: '&apet Backpacks list:'
+COMMAND_WAREHOUSE_LIST: '&apet Depositories list:'
+TEXT_IS_EMPTY:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cInputted's value cannot be null"
+  - "&f"
+NOT_INT:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cPositive integer needed"
+  - "&f"
+MONEY_ADD_HP:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aSuccessfully healed &f{0} &aHP for pet"
+  - "&f   Spent &6{1} &feconomy"
+  - "&f"
+MONEY_ADD_FOOD:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aSuccessfully supplied &f{0} &aenergy for pet"
+  - "&f   Spent &6{1} &feconomy"
+  - "&f"
+NOT_ENOUGH_MONEY:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cSorry. You do not have enough economy for this."
+  - "&f"
+PET_ALREADY_FULL_HP:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cPet's HP is already full."
+  - "&f"
+PET_ALREADY_FULL_FOOD:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cPet's energy is already full."
+  - "&f"
+PET_ALREADY_FULL_PACK_ADMIN:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cDesignated player's pet backpack is full that unable to contain more."
+  - "&f"
+PET_ALREADY_FULL_PACK_PLAYER:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cYour pet backpack was full that you are unable to have more."
+  - "&f"
+DISABLE_FUNCTION:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cFeature disabled."
+  - "&f"
+PET_TIRED:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   Pet have been took back due to tired."
+  - "&f   Please supplied more energy to it!"
+  - "&f"
+PET_IS_EMPTY:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cEmpty pet"
+  - "&f"
+PET_DOES_NOT_EXIST:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cDesignated pet does not exists."
+  - "&f"
+GIVE_EXP_TO_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   This pet gained &a{0} &fexps"
+  - "&f   Currently {1}/{2}"
+  - "&f"
+PET_LEVEL_UP:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   Pet upgraded to level &a{0} &f."
+  - "&f"
+EXPBOX_NOT_ENOUGH_EXP:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThe experience storage box does not have enough experience"
+  - "&f"
+CAN_NOT_EVOLVED_SEND:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThis pet cannot evolve"
+  - "&f"
+PET_HAVE_EVOLVED:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aThe pet has successfully evolved"
+  - "&f"
+CAN_NOT_EVOLVED_HOVER_TEXT:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThis pet cannot evolve"
+  - "&f"
+EVOLUTION_NOT_ENOUGH_LEVEL:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThe pet is empty or does not meet the level requirements"
+  - "&f"
+PET_LEVEL_IS_FULL:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThe pet level is full"
+  - "&f"
+UNSAFE_LOCATION:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cPet summoning location is unsafe location"
+  - "&f   &cPlease go to a safe area and then summon pet"
+  - "&f"
+SUCCESSFUL_RELEASE_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f      &6Successfully released the pet"
+  - "&f"
+PLAYER_IS_NOT_ONLINE:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cPlayer is not online"
+  - "&f"
+GET_A_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aGot a pet: &f{0}"
+  - "&f"
+MODELID_DOES_NOT_EXIST:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &model ID does not exist"
+  - "&f"
+DISABLE_PET_FOLLOW_WORLD:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cSummoning pets is prohibited in the current world"
+  - "&f"
+BACK_WITHOUT_PETS:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cYou don't own any pets"
+  - "&f"
+NAME_IS_TOO_LONG:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThe name is too short or too long, please use &62~6&c characters"
+  - "&f"
+EXIST_DISABLE_WORD:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThere are illegal characters"
+  - "&f"
+SUCCESSFULLY_RENAMED:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aSuccessfully renamed the pet to &f{0}"
+  - "&f"
+PAPI_FOLLOWING: '&fFollowing'
+PAPI_NOT_FOLLOWING: '&7Not following'
+PET_NO_HP:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThis pet has zero health, please treat it"
+  - "&f"
+SUCCESSFULLY_TRANSFER_PET_TO_NEWOWNER:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aSuccessfully transferred &f{0} &a to &f{1}"
+  - "&f"
+SUCCESSFULLY_TRANSFER_PET_FROM_OLDOWNER:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aReceived pet &f{0} &afrom &f{1}"
+  - "&f"
+CAN_NOT_SELF:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cCan't use it on yourself"
+  - "&f"
+SUCCESSFULLY_GIVE_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aGiven to pet &f{0}"
+  - "&f"
+SUCCESSFULLY_PUT_IN_PACK:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aThe designated pet has been put into the backpack from the warehouse"
+  - "&f"
+CAN_NOT_RIDE:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThis pet cannot be ride"
+  - "&f"
+RIDING_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &You are riding a pet"
+  - "&f"
+PLEASE_ENTER_TEXT:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &6Please complete the input within &f30 &6 seconds"
+  - "&f"
+NOT_IS_NUMBER_CHANCE:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cPlease enter the correct number, the probability number is 0 to 1, including decimals"
+  - "&f"
+LOTTERY_WINNING_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aCongratulations on your winning pet reward： &f{0}"
+  - "&f"
+LOTTERY_UNSUCCESSFUL_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cUnfortunately, you did not win the pet reward"
+  - "&f"
+YOU_NOT_HAVE_FOLLOWING_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cYou have no pets following"
+  - "&f"
+PLAYER_NOT_HAVE_FOLLOWING_PET:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThe target has no pets following"
+  - "&f"
+SKILL_NOT_EXIST:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cSkill ID does not exist"
+  - "&f"
+PLAYER_SUCCESSFUL_ADD_UNSKILL:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &aSuccessfully added skill &f{0} &afor player &f{1}&a’s pet &f{2}"
+  - "&f   &aTip: &f is in the unloaded skill gui of the specified pet"
+  - "&f"
+SKILL_COOLING:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cSkill&f{0} Cooling"
+  - "&c   Please wait &f{1} &csecond"
+  - "&f"
+LOAD_SKILL_GUI_SLOT_FULL:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cThe slot of the loaded skill gui is full"
+  - "&f"
+DISSATISFY_SKILL_TRIGGER:
+  - "&f"
+  - "&f   &7&l[&6&limiPet&7&l]"
+  - "&f   &cDoes not meet skill trigger conditions &f{0}"
+  - "&f"
+SKILL_FOOD_SHORT: '&6Food requirements &f{0}'
+SKILL_PERMISSION_SHORT: '&6Permission requirements &f{0}'

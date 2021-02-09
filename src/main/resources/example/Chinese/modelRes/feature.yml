@@ -1,0 +1,27 @@
+# 回复血量需求
+cureHP:
+  requirement:
+    # 需要经济
+    #   回复一血需要多少经济
+    money: 0.1
+    # 是否允许通过MC回血药水对宠物回血
+    potion: false
+
+# 宠物活力值
+food:
+  # 是否会消耗活力
+  enable: true
+  # 活力补充需求
+  requirement:
+    # 需要经济
+    #   补充一活力需要多少经济
+    money: 0.1
+
+# 关于坐骑
+ride:
+  # 是否允许坐骑
+  enable: false
+  # 是否为小型盔甲架(坐骑时)
+  isSmall: true
+  # 是否可以飞行，否则是跳跃
+  canFly: false

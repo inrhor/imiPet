@@ -1,0 +1,10 @@
+# 关于手持喂养
+eat:
+  # 是否启用
+  enable: true
+  # 格式为 标识符:数值:数量:脚本:脚本的值
+  # 标识符仅支持 material name lore
+  list:
+    - 'material:APPLE:1:addHP:2'
+    - 'name:&a卡哇伊:1:addFood:2'
+    - 'lore:&a描述:1:command_op:give @player minecraft:apple 1'

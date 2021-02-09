@@ -1,0 +1,96 @@
+update:
+  check:
+    enable: true
+
+setting:
+  lang: "zh_CN"
+
+gui:
+  # 输入/imipet open时，打开什么界面
+  # 可选：null vanilla vexview
+  open: "vanilla"
+
+mysql:
+  # 是否启用数据库存储
+  enable: false
+  # 数据库链接
+  url: 'jdbc:mysql://localhost:3306/数据库名?useSSL=false'
+  # 存储数据表名
+  tableName: 'imipetsql'
+  # 数据库用户名
+  user: 'user'
+  # 数据库密码
+  password: 'password'
+
+# 禁用宠物跟随状态的世界
+disablePetWorld:
+  - secc_world
+  - uopworld
+
+# 关于宠物显示名与名称设置
+petName:
+  # 更名上限字符
+  maximum: 6
+  # 更名禁用的字符
+  disableWords:
+    - "&"
+    - "%"
+    - "sb"
+    - "垃"
+  # 更名所需经济
+  money:
+    # 是否启用
+    enable: true
+    # 需要多少经济
+    need: 100
+
+# 关于加成反应-BUFF
+buff:
+  # 刷新时间，秒
+  refreshTime: 3
+
+# 关于强制回收宠物
+takeBack:
+  # 是否开启在几秒后重新召唤宠物
+  enable: false
+  # 秒
+  time: 2
+
+# 关于技能系统
+skill:
+  # 技能触发界面
+  gui:
+    # 材料
+    material: STONE
+    # 物品名称
+    itemName: "&a                            "
+    # 物品模型数据，无则去掉该值
+    customModelData: 15556
+    # Lore
+    lore:
+      - "&3技能： &f@skill_name"
+      - ""
+      - "&7&l[&a 左键释放 &7&l] &7&l[&c 右键卸载 &7&l]"
+      - ""
+  # 技能触发界面的点击未装载界面按钮
+  unGuiOpen:
+    # 材料
+    material: CHEST
+    # 物品名称
+    itemName: "&a                            "
+    # 物品模型数据，无则去掉该值
+    customModelData: 15557
+    # Lore
+    lore:
+      - "&7&l[&a 点击打开未装载技能界面 &7&l]"
+      - ""
+  # 未装载技能的界面
+  unGui:
+    material: STONE
+    itemName: "&a                            "
+    customModelData: 15558
+    lore:
+      - "&3技能： &f@skill_name"
+      - ""
+      - "&7&l[&a 左键装载 &7&l] &7&l[&c 右键删除 &7&l]"
+      - ""

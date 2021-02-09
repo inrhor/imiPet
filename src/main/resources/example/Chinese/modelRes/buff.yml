@@ -1,0 +1,19 @@
+# 关于加成反应-BUFF
+buff:
+  # BUFF属性
+  attribute:
+    # 是否启用
+    enable: false
+    # 使用何种属性插件，可选ap
+    use: ap
+    # AttributePlus 属性插件
+    # 格式："是否仅主人获得BUFF;BUFF有效范围;默认属性;升级后是否可强化;升级后属性的变化公式"
+    # 升级后属性的变化公式同样支持JavaScriptMath，链接：https://www.runoob.com/jsref/jsref-obj-math.html
+    # value_now 是该数值
+    # min_now 是~前面的数值
+    # max_now 是~后面的数值
+    # 使用~要确保默认值含有~
+    ap:
+      - "true;5;物理攻击：3.0~26.0;true;物理攻击： min_now+1~max_now+10"
+      - "true;10;生命力： +5;false;null"
+      - "false;10;防御力：+3;true;防御力：value_now+1"

@@ -1,0 +1,7 @@
+# Whether to automatically generate texture packs
+autoSpawn: false
+# pack type
+#   optiFine
+#   customModelData
+#   all
+type: "optiFine"

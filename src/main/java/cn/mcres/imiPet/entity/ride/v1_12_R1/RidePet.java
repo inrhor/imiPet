@@ -1,0 +1,235 @@
+package cn.mcres.imiPet.entity.ride.v1_12_R1;
+
+/*
+ * This file is part of MyPet
+ *
+ * Copyright © 2011-2019 Keyle
+ * MyPet is licensed under the GNU Lesser General Public License.
+ *
+ * MyPet is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MyPet is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import cn.inrhor.imipet.ImiPet;
+import cn.mcres.imiPet.api.model.ModelEntityManager;
+import cn.mcres.imiPet.other.MapAll;
+import net.minecraft.server.v1_12_R1.*;
+import org.bukkit.craftbukkit.v1_12_R1.CraftWorld;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Player;
+import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.metadata.FixedMetadataValue;
+
+import java.lang.reflect.Field;
+import java.util.UUID;
+
+public class RidePet extends EntityArmorStand {
+    private Player player;
+
+    public RidePet(Player player) {
+        super(((CraftWorld) player.getLocation().getWorld()).getHandle());
+        this.player = player;
+    }
+
+    static {
+        // 给我们的自定义实体做一个MinecraftKey
+        MinecraftKey minecraftKey = new MinecraftKey("custom_armorstand"); // minecraft:xxx
+        // 实体注册
+        EntityTypes.d.add(minecraftKey); // 将此key添加至EntityTypes的列表里
+        EntityTypes.b.a(30, minecraftKey, RidePet.class); // 对其注册
+        // 如果想取消对该实体的注册那么可以执行下方的代码
+        EntityTypes.d.remove(minecraftKey);
+        MinecraftKey oldKey = EntityTypes.b.b(EntityArmorStand.class); // minecraft:zombie
+        EntityTypes.b.a(30, oldKey, EntityArmorStand.class); // 把54号id所对应的minecraft:key和entity class进行覆盖
+    }
+
+    public void spawnEntity() {
+        WorldServer world = ((CraftWorld) this.player.getWorld()).getHandle();
+        UUID playerUUID = this.player.getUniqueId();
+        String modelId = MapAll.ridePetList.get(playerUUID).get(0);
+        boolean isSmall = Boolean.parseBoolean(MapAll.ridePetList.get(playerUUID).get(1));
+        ArmorStand armorStand = (ArmorStand) this.getBukkitEntity();
+        armorStand.setAI(false);
+        armorStand.setSmall(isSmall);
+        armorStand.setSilent(true);
+        armorStand.setVisible(false);
+        armorStand.setBasePlate(false);
+        armorStand.setInvulnerable(true);
+        armorStand.teleport(this.player);
+        armorStand.addPassenger(this.player);
+        armorStand.setMetadata("imipet.ride", new FixedMetadataValue(ImiPet.loader.getPlugin(), true));
+        MapAll.ridePet.put(playerUUID, armorStand);
+        world.addEntity(this, CreatureSpawnEvent.SpawnReason.CUSTOM);
+
+        ModelEntityManager.fastCommonSpawnModel(armorStand, modelId);
+//        new ModelEntity(armorStand, modelId, false);
+    }
+
+    private static Field jump = null; // 跳跃字段
+    static {
+        // 反射一下EntityLiving里的跳跃字段
+        try {
+            jump = EntityLiving.class.getDeclaredField("bd"); // 在1.11版本当中, 该字段称为bd, 而在1.10.2中该字段称为be
+            jump.setAccessible(true);
+        } catch (NoSuchFieldException | SecurityException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    protected boolean isJumpOrFly = false;
+
+    public void e(float f, float f1) {
+        if (!this.isJumpOrFly) {
+            super.e(f, f1);
+        }
+    }
+
+    public void a(float motionSideways, float motionForward, float f) {
+        if (this.passengers != null && !this.passengers.isEmpty()) {
+            EntityLiving passenger = (EntityLiving) this.passengers.get(0);
+
+            UUID passengerUUID = passenger.getUniqueID();
+
+            if (MapAll.ridePetList.get(passengerUUID) == null) return;
+
+            boolean canFly = Boolean.parseBoolean(MapAll.ridePetList.get(passengerUUID).get(2));
+
+            if (this.onGround) {
+                this.isJumpOrFly = false;
+            }
+
+            this.lastYaw = (this.yaw = passenger.yaw);
+            this.pitch = passenger.pitch * 0.5F;
+            setYawPitch(this.yaw, this.pitch);
+            this.aP = (this.aN = this.yaw);
+
+            motionSideways = passenger.be * 0.5F;
+            motionForward = passenger.bg;
+
+            if (motionForward <= 0.0F) {
+                motionForward *= 0.25F;
+            }
+
+            motionSideways *= 0.85F;
+
+            float speed = 0.2F;
+            double jumpHeight = 0.5f;
+            float ascendSpeed = 0.2f;
+
+            ride(motionSideways, motionForward, f, speed);
+
+            if (jump != null && this.isVehicle()) {
+                boolean doJump = false;
+                if (jump != null) {
+                    try {
+                        doJump = jump.getBoolean(passenger);
+                    } catch (IllegalAccessException ignored) {
+                    }
+                }
+
+                if (doJump) {
+                    if (canFly) {
+                        if (this.motY < ascendSpeed) {
+                            this.motY = ascendSpeed;
+                            this.isJumpOrFly = true;
+                        }
+                    } else {
+                        if (onGround) {
+                            this.motY = jumpHeight;
+                            this.isJumpOrFly = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void ride(float motionSideways, float f, float motionForward, float speedModifier) {
+        double locY;
+        float f2;
+        float speed;
+        float swimmSpeed;
+
+        if (this.isInWater()) {
+            locY = this.locY;
+            speed = 0.8F;
+            swimmSpeed = 0.02F;
+
+            this.b(motionSideways, motionForward, f, swimmSpeed);
+            this.move(EnumMoveType.SELF, this.motX, this.motY, this.motZ);
+            this.motX *= speed;
+            this.motY *= 0.800000011920929D;
+            this.motZ *= speed;
+            this.motY -= 0.02D;
+            if (this.positionChanged && this.c(this.motX, this.motY + 0.6000000238418579D - this.locY + locY, this.motZ)) {
+                this.motY = 0.30000001192092896D;
+            }
+        } else if (this.au()) { // in lava
+            locY = this.locY;
+            this.b(motionSideways, motionForward, f, 0.02F);
+            this.move(EnumMoveType.SELF, this.motX, this.motY, this.motZ);
+            this.motX *= 0.5D;
+            this.motY *= 0.5D;
+            this.motZ *= 0.5D;
+            this.motY -= 0.02D;
+            if (this.positionChanged && this.c(this.motX, this.motY + 0.6000000238418579D - this.locY + locY, this.motZ)) {
+                this.motY = 0.30000001192092896D;
+            }
+        } else {
+            float friction = 0.91F;
+            if (this.onGround) {
+                friction = this.world.getType(new BlockPosition(MathHelper.floor(this.locX), MathHelper.floor(this.getBoundingBox().b) - 1, MathHelper.floor(this.locZ))).getBlock().frictionFactor * 0.91F;
+            }
+
+            speed = speedModifier * (0.16277136F / (friction * friction * friction));
+
+            this.b(motionSideways, motionForward, f, speed);
+            friction = 0.91F;
+            if (this.onGround) {
+                friction = this.world.getType(new BlockPosition(MathHelper.floor(this.locX), MathHelper.floor(this.getBoundingBox().b) - 1, MathHelper.floor(this.locZ))).getBlock().frictionFactor * 0.91F;
+            }
+
+            if (this.m_()) {
+                swimmSpeed = 0.15F;
+                this.motX = MathHelper.a(this.motX, -swimmSpeed, swimmSpeed);
+                this.motZ = MathHelper.a(this.motZ, -swimmSpeed, swimmSpeed);
+                this.fallDistance = 0.0F;
+                if (this.motY < -0.15D) {
+                    this.motY = -0.15D;
+                }
+            }
+
+            this.move(EnumMoveType.SELF, this.motX, this.motY, this.motZ);
+            if (this.positionChanged && this.m_()) {
+                this.motY = 0.2D;
+            }
+
+            this.motY -= 0.08D;
+
+            this.motY *= 0.9800000190734863D;
+            this.motX *= friction;
+            this.motZ *= friction;
+        }
+
+        this.aF = this.aG;
+        locY = this.locX - this.lastX;
+        double d1 = this.locZ - this.lastZ;
+        f2 = MathHelper.sqrt(locY * locY + d1 * d1) * 4.0F;
+        if (f2 > 1.0F) {
+            f2 = 1.0F;
+        }
+
+        this.aG += (f2 - this.aG) * 0.4F;
+        this.aH += this.aG;
+    }
+}

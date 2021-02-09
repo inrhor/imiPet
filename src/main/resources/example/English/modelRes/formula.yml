@@ -1,0 +1,37 @@
+#  Available math：
+#    ()
+#    *
+#    /
+#    +
+#    -
+#    JavaScriptMath：https://www.runoob.com/jsref/jsref-obj-math.html
+#
+# When the player gains experience, it is also stored in the experience storage box
+#   variable
+#     add_exp  Player get experience
+#   Of course, the experience gained by the player will not decrease
+addExpByPlayer: "(Math.random()*(add_exp*0.2))+(add_exp*0.1)"
+# About pet experience level formula
+#   variable
+#     level  Level of pet before upgrade
+levelExpFormula: "30*(level*level*level+5*level)-10"
+# About pet min attack formula
+#   variable
+#     level  Level of pet before upgrade
+#     min_damage  Min attack before pet upgrade
+addMinAttackFormula: "min_damage+0.3"
+# About pet max attack formula
+#   variable
+#     level  Level of pet before upgrade
+#     max_damage  Max attack before pet upgrade
+addMaxAttackFormula: "max_damage+0.3"
+# About pet food formula
+#   variable
+#     level  Level of pet before upgrade
+#     max_food  Max food before pet upgrade
+addFoodFormula: "max_food+10"
+# About the pet max HP formula
+#   variable
+#     level  Level of pet before upgrade
+#     max_hp  Max HP before pet upgrade
+addMaxHPFormula: "max_hp+10"

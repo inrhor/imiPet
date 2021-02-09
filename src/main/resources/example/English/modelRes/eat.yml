@@ -1,0 +1,9 @@
+# About handheld feeding
+eat:
+  enable: true
+  # The format is sign:value:amount:scriptType:scriptValue
+  # Sign only supports material name lore
+  list:
+    - 'material:APPLE:1:addHP:2'
+    - 'name:&aWoW:1:addFood:2'
+    - 'lore:&aan apple:1:command_op:give @player minecraft:apple 1'

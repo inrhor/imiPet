@@ -1,0 +1,37 @@
+#  可用数学：
+#    () 括号
+#    * 乘法
+#    / 除法
+#    + 加法
+#    - 减法
+#    公式可以使用JavaScriptMath：https://www.runoob.com/jsref/jsref-obj-math.html
+#
+# 玩家获得经验的同时也额外存入到经验存储盒
+#   变量
+#     add_exp 玩家获得的经验值
+#   当然，玩家获得的经验不会因而减少
+addExpByPlayer: "(Math.random()*(add_exp*0.2))+(add_exp*0.1)"
+# 关于宠物经验等级公式
+#   变量
+#     level 宠物升级前的等级
+levelExpFormula: "30*(level*level*level+5*level)-10"
+# 关于宠物最低攻击公式
+#   变量
+#     level 宠物升级前的等级
+#     min_damage 宠物升级前得最低攻击
+addMinAttackFormula: "min_damage+0.3"
+# 关于宠物最高攻击公式
+#   变量
+#     level 宠物升级前的等级
+#     max_damage 宠物升级前得最高攻击
+addMaxAttackFormula: "max_damage+0.3"
+# 关于宠物活力公式
+#   变量
+#     level 宠物升级前的等级
+#     max_food 宠物升级前的最大活力
+addFoodFormula: "max_food+10"
+# 关于宠物最大血量公式
+#   变量
+#     level 宠物升级前的等级
+#     max_hp 宠物升级前的最大血量
+addMaxHPFormula: "max_hp+10"

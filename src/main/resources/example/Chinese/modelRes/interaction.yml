@@ -1,0 +1,17 @@
+# 交互式功能
+interaction:
+  # 显示宠物信息
+  info:
+    # 是否启用
+    enable: true
+    # 全息显示信息
+    hologram:
+      # 显示时长 (秒)
+      stayTime: 6
+      stringList:
+        - "&f名称： %imipet_name%"
+        - "&f血量 %imipet_nowhp%&7/&f%imipet_maxhp%"
+      # 全息位置
+      x: 1
+      y: 1
+      z: 0

@@ -1,0 +1,21 @@
+cureHP:
+  requirement:
+    # How much economy does it take to recover one HP
+    money: 0.1
+    # Whether to allow HP to be regenerated to pets through MC rebirth potion
+    potion: false
+
+food:
+  # Will it consume food
+  enable: true
+  requirement:
+    # How much economy does it take to recover one Food
+    money: 0.1
+
+ride:
+  # Whether to allow ride
+  enable: false
+  # Whether it is a small armor stand (when ride)
+  isSmall: true
+  # Can it fly, otherwise it’s a jump
+  canFly: false

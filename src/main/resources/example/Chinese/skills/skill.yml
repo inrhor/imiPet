@@ -1,0 +1,109 @@
+skill:
+  # 技能唯一ID，忽略大小写
+  id: "MechaEngineering"
+  # 从哪个动态ID开始
+  startAnimation: 1
+  animation:
+    # 动态ID
+    1:
+      # 可选 item, mythicMobs, modelEngine
+      type: item
+      # 如果 type 是 item
+      item:
+        # 物品材料
+        material: PLAYER_HEAD
+        # 物品名称
+        name: ""
+        # 物品Lore
+        lore:
+          - ""
+          - ""
+        # 物品数据
+        customModelData: 76382
+        # 是否有重力
+        gravity: true
+        # 释放位置
+        # 可选
+        #   addLocation:方向类型:乘数:高度
+        #      在释放者的位置基础上增加的值
+        #      方向类型可选 left right behind
+        #      乘数可正可负，越大距离越远
+        #      高度可正可负，无需解释
+        #   follow:方向类型:乘数:高度   跟随释放者
+        castLocation: "addLocation:behind:-3:0"
+        # 技能脚本
+        # 可填
+        #   onlyAnimation  仅动态
+        #   animation:but_autoAim:盔甲架是否点头瞄准:瞄准目标:范围  动态的同时瞄准范围内目标
+        script: "animation:but_autoAim:false:all:10"
+        # 效果脚本
+        buff:
+          # MythicMobs:技能:多少秒后触发
+          script:
+            - "MythicMobs:AngrySludgePoison:3"
+          # 多少秒后执行condition值
+          timeCondition: 5
+          # 关于再触发效果
+          # 扫描目标(建议time值不填或填0)   aim:盔甲架是否点头瞄准:瞄准目标:范围:扫描时长:若没有目标则执行下一个动态ID，否则再次触发效果
+          # 触发即结束(或不填)   one_time
+          condition: "aim:false:all:10:3:2"
+      # 显示时长，结束后实行或不实行下一个动态ID，秒
+      time: 8
+      # 时长已满后下一个动态ID
+      # 若无则不填或留空，会终止本技能
+      nextAnimationID: "2"
+    2:
+      # 可选 item, mythicMobs, modelEngine
+      type: "mythicMobs"
+      # 如果 type 是 mythicMobs
+      mythicMobs:
+        # MythicMobs技能:多少秒后触发
+        skills:
+          - "AngrySludgePoison:2"
+      # 时长，结束后实行或不实行下一个动态ID，秒
+      time: 3
+      # 时长已满后下一个动态ID
+      # 若无则不填或留空，会终止本技能
+      nextAnimationID: ""
+    3:
+      # 可选 item, mythicMobs, modelEngine
+      type: "modelEngine"
+      # 如果 type 是 modelEngine
+      modelEngine:
+        # ModelEngine模型ID，不是宠物模型ID
+        modelId: "Mecha"
+        # ModelEngine动画状态
+        state: "aim"
+        # 是否有重力
+        gravity: true
+        # 释放位置
+        # 可选
+        #   addLocation:方向类型:乘数:高度
+        #      在释放者的位置基础上增加的值
+        #      方向类型可选 left right behind
+        #      乘数可正可负，越大距离越远
+        #      高度可正可负，无需解释
+        #   follow:方向类型:乘数:高度   跟随释放者
+        castLocation: "addLocation:behind:-3:0"
+        # 技能脚本
+        # 可填
+        #   onlyAnimation  仅动态
+        #   animation:but_autoAim:盔甲架是否点头瞄准:瞄准目标:范围  动态的同时瞄准范围内目标
+        script: "animation:but_autoAim:false:all:10"
+        # 效果脚本
+        buff:
+          # MythicMobs:技能:多少秒后触发
+          script:
+            - "MythicMobs:AngrySludgePoison:3"
+          # 多少秒后执行condition值
+          timeCondition: 5
+          # 关于再触发效果
+          # 扫描目标(建议time值不填或填0)   aim:盔甲架是否点头瞄准:瞄准目标:范围:扫描时长:若没有目标则执行下一个动态ID，否则再次触发效果
+          # 触发即结束(或不填)   one_time
+          condition: "aim:false:all:10:3:2"
+      # 时长，结束后实行或不实行下一个动态ID，秒
+      time: 3
+      # 时长已满后下一个动态ID
+      # 若无则不填或留空，会终止本技能
+      nextAnimationID: ""
+

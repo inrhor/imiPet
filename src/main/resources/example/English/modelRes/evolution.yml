@@ -1,0 +1,22 @@
+# About pet evolution
+evolution:
+  # Can it evolve
+  enable: false
+  requirement:
+    # need level
+    level: 10
+    # need economy
+    money: 300
+  # Click the information of the evolution button
+  text:
+    - "&f                                            "
+    - "&fit..."
+    - "&fAn incarnation of an angel"
+    - "&f"
+    - "&6Evolutionary conditions"
+    - "&fNeed to reach Lv.&c%imipet_evolutionlevel%"
+    - "&f"
+    - "&7&l[&aClick to evolve&7&l]"
+    - "&f"
+  # Specify new model ID
+  newModelId: "aaa"

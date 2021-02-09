@@ -1,0 +1,15 @@
+name: ${name}
+main: ${main}
+version: ${version}
+api-version: "1.13"
+authors: ${authors}
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - HolographicDisplays
+  - TrHologram
+  - AttributePlus
+  - CMI
+  - MythicMobs
+  - ModelEngine
+  - VexView

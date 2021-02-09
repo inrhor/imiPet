@@ -1,0 +1,741 @@
+vg:
+  gui:
+    # 主界面
+    1:
+      # url: "[local]imipet/gui_1.png"
+      url: '[local]imipet/1.png'
+      x: -1
+      y: -1
+      w: 500
+      h: 300
+    # 经验库界面
+    2:
+      # url: "[local]imipet/gui_2.png"
+      url: '[local]imipet/1.png'
+      x: -1
+      y: -1
+      w: 500
+      h: 300
+    # 进化仓界面
+    3:
+      # url: "[local]imipet/gui_3.png"
+      url: '[local]imipet/1.png'
+      x: -1
+      y: -1
+      w: 500
+      h: 300
+    # 更新信息界面
+    4:
+      url: '[local]imipet/1.png'
+      x: -1
+      y: -1
+      w: 500
+      h: 300
+    # 仓库系统界面
+    5:
+      url: '[local]imipet/1.png'
+      x: -1
+      y: -1
+      w: 500
+      h: 300
+    # 转交宠物选择界面
+    6:
+      url: '[local]imipet/1.png'
+      x: -1
+      y: -1
+      w: 300
+      h: 100
+  vsl:
+    # 界面统一滚动列表
+    1:
+      x: 330
+      y: 10
+      w: 150
+      h: 280
+      full: 280
+    # 仓库系统一滚动列表
+    2:
+      x: 10
+      y: 30
+      w: 480
+      h: 260
+      full: 280
+      addFull: 30
+  vexTextField:
+    # 加血输入框
+    1:
+      id: 7655
+      x: 20
+      y: 205
+      w: 70
+      h: 20
+    # 喂养输入框
+    2:
+      id: 7656
+      x: 20
+      y: 205
+      w: 70
+      h: 20
+    # 给定经验输入框
+    3:
+      id: 7657
+      x: 10
+      y: 196
+      w: 60
+      h: 16
+    # 为宠物更改名称
+    4:
+      id: 7658
+      x: 95
+      y: 212
+      w: 66
+      h: 16
+    # 转交宠物给目标玩家
+    5:
+      id: 7659
+      x: 20
+      y: 205
+      w: 70
+      h: 20
+  image:
+    # 主界面-宠物模型背景
+    1:
+      url: '[local]imipet/2.png'
+      x: 20
+      y: 20
+      w: 150
+      h: 150
+    # 主界面-宠物信息背景
+    2:
+      url: '[local]imipet/2.png'
+      x: 185
+      y: 20
+      w: 130
+      h: 200
+    # 主界面-已选择宠物的指上
+    3:
+      url: '[local]imipet/8.png'
+      x: 20
+      y: 232
+      w: 30
+      h: 15
+      addX: 10
+    # 经验库-经验盒主体
+    5:
+      url: '[local]imipet/10.png'
+      x: 70
+      y: 60
+      w: 190
+      h: 170
+    # 进化仓-选择的宠物背景
+    6:
+      url: '[local]imipet/11.png'
+      x: 10
+      y: 10
+      w: 220
+      h: 140
+    # 进化仓-进化的宠物背景
+    7:
+      url: '[local]imipet/12.png'
+      x: 105
+      y: 149
+      w: 220
+      h: 140
+    # 进化仓-选择的宠物模型
+    8:
+      x: -5
+      y: 5
+      w: 140
+      h: 110
+    # 进化仓-进化的宠物模型
+    9:
+      x: 200
+      y: 180
+      w: 140
+      h: 110
+    # 更新信息界面-宠物模型背景
+    10:
+      url: '[local]imipet/2.png'
+      x: 20
+      y: 20
+      w: 150
+      h: 150
+    # 更新信息界面-宠物信息背景
+    11:
+      url: '[local]imipet/2.png'
+      x: 185
+      y: 30
+      w: 130
+      h: 130
+    # 更新信息界面-选择的宠物模型
+    12:
+      x: 20
+      y: 20
+      w: 140
+      h: 140
+  button:
+    # 主界面-空的选择宠物框
+    1:
+      id: -2111
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 20
+      y: 250
+      w: 30
+      h: 30
+      addX: 10
+    2:
+      id: 7500
+      text: 跟随与否
+      hoverText:
+        - '&f                                            '
+        - '&6当前状态： %imipet_follow%'
+        - '&f'
+        - '&7&l[&a点击切换&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 20
+      y: 175
+      w: 70
+      h: 20
+    3:
+      id: 7501
+      text: 治疗
+      hoverText:
+        - '&f                                            '
+        - '&f点击可以通过经济为宠物治疗'
+        - '&f'
+        - '&7&l[&a点击&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 260
+      y: 125
+      w: 70
+      h: 20
+    4:
+      id: 7502
+      text: 喂养
+      hoverText:
+        - '&f                                            '
+        - '&f点击可以通过经济为宠物喂养'
+        - '&f'
+        - '&7&l[&a点击&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 260
+      y: 155
+      w: 70
+      h: 20
+    5:
+      id: 7503
+      text: '&c放生'
+      hoverText:
+        - '&f                                            '
+        - '&f点击放生宠物'
+        - '&f'
+        - '&c注意，这可能是危险操作，请确认好！'
+        - '&f'
+        - '&7&l[&c点击&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 100
+      y: 175
+      w: 70
+      h: 20
+    7:
+      id: 7505
+      text: 确定
+      hoverText:
+        - '&f                                            '
+        - '&f请在输入框输入需要回复的血量值'
+        - '&f'
+        - '&6提示'
+        - '&f请输入支持正整数'
+        - '&f回复一血需要 &c%imipet_cureneedmoney% &f经济'
+        - '&f'
+        - '&7&l[&a点击确定&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 100
+      y: 205
+      w: 70
+      h: 20
+    8:
+      id: 7506
+      text: '&a确定放生'
+      hoverText:
+        - '&f                                            '
+        - '&c请注意，这可能是危险的操作'
+        - '&c放生该宠物意味着该宠物的数据删除'
+        - '&c需要您再次确认，否则后果自负'
+        - '&f'
+        - '&7&l[&c点击确定&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 20
+      y: 205
+      w: 70
+      h: 20
+    9:
+      id: 7507
+      text: '&c取消放生'
+      hoverText:
+        - '&f                                            '
+        - '&c再次确认！您现在还可以选择取消放生宠物'
+        - '&f'
+        - '&7&l[&c点击取消&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 100
+      y: 205
+      w: 70
+      h: 20
+    11:
+      id: 7509
+      text: 确定
+      hoverText:
+        - '&f                                            '
+        - '&f请在输入框输入需要补充的活力值'
+        - '&f'
+        - '&6提示'
+        - '&f请输入支持正整数'
+        - '&f回复一血需要 &c%imipet_foodneedmoney% &f经济'
+        - '&f'
+        - '&7&l[&a点击确定&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 100
+      y: 205
+      w: 70
+      h: 20
+    12:
+      id: 7510
+      text: 给予经验
+      hoverText:
+        - '&f                                            '
+        - '&f请在输入框输入需要补充的活力值'
+        - '&f'
+        - '&6提示'
+        - '&f请输入支持正整数'
+        - '&f'
+        - '&7&l[&a点击确定&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 260
+      y: 174
+      w: 70
+      h: 20
+    # 经验库-空的宠物选择框
+    13:
+      id: 115874
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 73
+      y: 30
+      w: 30
+      h: 30
+    # 进化仓-空的宠物选择框
+    14:
+      id: 115875
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 50
+      y: 135
+      w: 30
+      h: 30
+    # 经验库-宠物选择框 > 6
+    15:
+      id: 115876
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 113
+      y: 30
+      w: 30
+      h: 30
+      addX: 10
+    # 进化仓-宠物选择框 > 6
+    16:
+      id: 115885
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 90
+      y: 135
+      w: 30
+      h: 30
+      addX: 10
+    17:
+      id: 115895
+      text: 点击进化
+      # 如果目标宠物配置没有填写 点击进化按钮的信息 则使用该内容
+      hoverText:
+        - '&f                                            '
+        - '&6进化条件'
+        - '&f需要达到 &c%imipet_evolutionlevel% &f级'
+        - '&f'
+        - '&6如果满足条件，请问，是否确定进化'
+        - '&f'
+        - '&7&l[&a点击确定&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 50
+      y: 170
+      w: 70
+      h: 20
+    # 更新信息-空的宠物选择框
+    18:
+      id: 115975
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 20
+      y: 175
+      w: 30
+      h: 30
+    # 更新信息-宠物选择框 > 6
+    19:
+      id: 115985
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 60
+      y: 175
+      w: 30
+      h: 30
+      addX: 10
+    # 更新信息-空的宠物选择框
+    20:
+      id: 116001
+      text: 更改名称
+      hoverText:
+        - '&f                                            '
+        - '&f给宠物起个新名字吧！不过需要消耗一定的经济'
+        - '&f'
+        - '&7&l[&6点击进行更改&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 20
+      y: 210
+      w: 70
+      h: 20
+    # 更新信息-空的宠物选择框
+    21:
+      id: 116002
+      text: '&a确认更改'
+      hoverText:
+        - '&f                                            '
+        - '&f一旦确认后需要花费 &6100 &f经济'
+        - '&f'
+        - '&7&l[&a点击确认&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 165
+      y: 210
+      w: 70
+      h: 20
+    # 主界面-信息列表-上一页
+    22:
+      id: 116012
+      text: 上一页
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 213
+      y: 10
+      w: 70
+      h: 20
+    # 主界面-信息列表-下一页
+    23:
+      id: 116013
+      text: 下一页
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 213
+      y: 210
+      w: 70
+      h: 20
+    # 主界面-信息列表-转交宠物
+    24:
+      id: 116014
+      text: 转交宠物
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 190
+      y: 185
+      w: 70
+      h: 20
+    25:
+      id: 7505
+      text: '&c确定'
+      hoverText:
+        - '&f                                            '
+        - '&f一旦确认就将该宠物转交给目标玩家'
+        - '&f'
+        - '&7&l[&a点击确定&7&l]'
+        - '&f'
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 100
+      y: 205
+      w: 70
+      h: 20
+    26:
+      id: 7506
+      text: 返回主页
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 10
+      y: 8
+      w: 70
+      h: 20
+    # 更新信息-宠物选择框 > 6
+    27:
+      id: 116011
+      text: ''
+      url1: '[local]imipet/4.png'
+      url2: '[local]imipet/5.png'
+      x: 35
+      y: 40
+      w: 30
+      h: 30
+      addX: 10
+  text:
+    # 主界面-宠物信息
+    1:
+      x: 190
+      y: 40
+      string:
+        - '名称： %imipet_name%'
+    # 主界面-宠物信息
+    2:
+      x: 190
+      y: 70
+      string:
+        - '等级： %imipet_level%'
+    # 主界面-宠物信息
+    3:
+      x: 190
+      y: 100
+      string:
+        - '经验： %imipet_nowexp% / %imipet_maxexp%'
+    # 主界面-宠物信息
+    4:
+      x: 190
+      y: 130
+      string:
+        - '血量： %imipet_nowhp% / %imipet_maxhp%'
+    # 主界面-宠物信息
+    5:
+      x: 190
+      y: 160
+      string:
+        - '活力： %imipet_nowfood% / %imipet_maxfood%'
+    # 经验存储盒量
+    6:
+      x: 111
+      y: 141
+      string:
+        - '&a经验存储量 %imipet_expbox%'
+    # 更新信息界面-宠物信息
+    7:
+      x: 190
+      y: 35
+      string:
+        - '名称： %updateinfo_name%'
+    # 将宠物从仓库放入背包的选择提示
+    8:
+      x: -1
+      y: 18
+      string:
+        - '背包已满，请选择需要替换的宠物'
+vsl:
+  vexTextField:
+    1:
+      id: 118971
+      x: 20
+      y: 205
+      w: 70
+      h: 20
+      addY: 30
+  text:
+    1:
+      string:
+        - '宠物名称： %warehouse_name%'
+        - ''
+        - '等级： %warehouse_level%'
+      x: 65
+      y: 9
+      addY: 45
+  button:
+    1:
+      id: 59726
+      text: 经验库
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 45
+      y: 53
+      w: 80
+      h: 20
+    2:
+      id: 59727
+      text: 进化仓
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 45
+      y: 92
+      w: 80
+      h: 20
+    3:
+      id: 59728
+      text: 主界面
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 45
+      y: 15
+      w: 80
+      h: 20
+    4:
+      id: 59729
+      text: 更新信息
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 45
+      y: 131
+      w: 80
+      h: 20
+    5:
+      id: 59730
+      text: 仓库系统
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 45
+      y: 168
+      w: 80
+      h: 20
+    6:
+      id: 59731
+      text: '&f'
+      url1: '[local]imipet/13.png'
+      url2: '[local]imipet/13.png'
+      x: 10
+      y: 3
+      w: 40
+      h: 40
+      addY: 45
+      hoverText:
+        - '&f                                            '
+        - '名称： %warehouse_name%'
+        - ''
+        - '等级： %warehouse_level%'
+        - '经验： %warehouse_nowexp% &7/ &f%warehouse_maxexp%'
+        - ''
+        - '血量： %warehouse_nowhp% &7/ &f%warehouse_maxhp%'
+        - '活力： %warehouse_nowfood% &7/ &f%warehouse_maxfood%'
+        - ''
+        - '攻击： %warehouse_damage%'
+        - '&f'
+    7:
+      id: 59732
+      text: 放入背包
+      url1: '[local]imipet/6.png'
+      url2: '[local]imipet/7.png'
+      x: 315
+      y: 13
+      w: 80
+      h: 20
+      addY: 45
+  image:
+    # 经验库图标
+    1:
+      url: '[local]imipet/13.png'
+      x: 10
+      y: 48
+      w: 28
+      h: 28
+    # 经验库图标
+    2:
+      url: '[local]imipet/15.png'
+      x: 14
+      y: 52
+      w: 20
+      h: 20
+    # 进化仓图标
+    3:
+      url: '[local]imipet/13.png'
+      x: 10
+      y: 86
+      w: 28
+      h: 28
+    # 进化仓图标
+    4:
+      url: '[local]imipet/14.png'
+      x: 14
+      y: 90
+      w: 20
+      h: 20
+    # 主界面图标
+    5:
+      url: '[local]imipet/13.png'
+      x: 10
+      y: 10
+      w: 28
+      h: 28
+    # 主界面图标
+    6:
+      url: '[local]imipet/16.png'
+      x: 14
+      y: 14
+      w: 20
+      h: 20
+    # 更新信息图标
+    7:
+      url: '[local]imipet/13.png'
+      x: 10
+      y: 124
+      w: 28
+      h: 28
+    # 更新信息图标
+    8:
+      url: '[local]imipet/17.png'
+      x: 14
+      y: 128
+      w: 20
+      h: 20
+    # 仓库系统图标
+    9:
+      url: '[local]imipet/13.png'
+      x: 10
+      y: 162
+      w: 28
+      h: 28
+    # 仓库系统图标
+    10:
+      url: '[local]imipet/18.png'
+      x: 14
+      y: 166
+      w: 20
+      h: 20
+    # 仓库系统列表信息背景
+    11:
+      url: '[local]imipet/1.png'
+      x: 60
+      y: 3
+      w: 250
+      h: 40
+      addY: 45
+

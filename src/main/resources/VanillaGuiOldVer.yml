@@ -1,0 +1,110 @@
+gui:
+  home:
+    title: '&l宠物主页'
+    followPet:
+      material: FISHING_ROD
+      name: '&7&l[&f 跟随与否 &7&l]'
+    curePet:
+      material: GOLDEN_APPLE
+      name: '&7&l[&f 治疗宠物 &7&l]'
+    foodPet:
+      material: COOKED_BEEF
+      name: '&7&l[&f 喂养宠物 &7&l]'
+    transfer:
+      material: REDSTONE_BLOCK
+      name: '&7&l[&c 转让宠物 &7&l]'
+    release:
+      material: TNT
+      name: '&7&l[&c 放生宠物 &7&l]'
+  expBox:
+    title: '&l经验存储盒'
+    giveExp:
+      material: EXP_BOTTLE
+      name: '&f'
+      lore:
+        - '                                                                '
+        - '   &7&l[&a 点击将经验给予已选的宠物 &7&l]'
+        - ''
+        - '   &f当前经验存储盒量值： &7%imipet_expbox%'
+        - ''
+        - '   &6&l提醒'
+        - '   &f经验获取途径'
+        - '      &71. 宠物跟随状态下，拾取的经验按公式算入经验盒'
+        - ''
+  warehouse:
+    title: '&l宠物仓库'
+    intoPack:
+      material: CHEST
+      name: '&7&l[&a 点击放入背包 &7&l]'
+  updateInfo:
+    title: '&l更新宠物信息'
+    rename:
+      material: NAME_TAG
+      name: '&7&l[&a 点击更改宠物名称 &7&l]'
+  evolution:
+    title: '&l进化仓'
+    start:
+      material: SLIME_BALL
+    cannot:
+      name: '&7&l[&c 不支持进化 &7&l]'
+    select:
+      material: SKULL_ITEM
+      name: '&7&l[&c 无可进化的形态 &7&l]'
+  selectPet:
+    title: '&l选择宠物'
+    emptyPet:
+      material: BARRIER
+      name: '&7&l[&c 该槽位没有宠物 &7&l]'
+  global:
+    close:
+      material: MAGMA_CREAM
+      name: '&7&l[&c 关闭 &7&l]'
+    previousPage:
+      material: STONE_BUTTON
+      name: '&7&l[&a 上一页 &7&l]'
+    nextPage:
+      material: STONE_BUTTON
+      name: '&7&l[&a 下一页 &7&l]'
+    noSelectPet:
+      material: SKULL_ITEM
+      name: '&7&l[&6 点击选择宠物 &7&l]'
+    warehouse:
+      material: CHEST
+      name: '&7&l[&f 打开宠物仓库 &7&l]'
+    expBox:
+      material: EXP_BOTTLE
+      name: '&7&l[&f 打开经验存储盒 &7&l]'
+    updatePetInfo:
+      material: NAME_TAG
+      name: '&7&l[&f 更新宠物信息 &7&l]'
+    evolution:
+      material: ENDER_CHEST
+      name: '&7&l[&f 进化仓 &7&l]'
+    petInfo:
+      lore:
+        - '                                                                '
+        - '   &f宠物名称： &7%imipet_name%'
+        - ''
+        - '   &f等级： &7%imipet_level%'
+        - '   &f经验： &7%imipet_nowexp% / %imipet_maxexp%'
+        - ''
+        - '   &f血量： &7%imipet_nowhp% / %imipet_maxhp%'
+        - '   &f活力： &7%imipet_nowfood% / %imipet_maxfood%'
+        - '   &f伤害： &7%imipet_damage%'
+        - ''
+    warehousePetInfo:
+      lore:
+        - '                                                                '
+        - '   &f宠物名称： &7%warehouse_name%'
+        - ''
+        - '   &f等级： &7%warehouse_level%'
+        - '   &f经验： &7%warehouse_nowexp% / %warehouse_maxexp%'
+        - ''
+        - '   &f血量： &7%warehouse_nowhp% / %warehouse_maxhp%'
+        - '   &f活力： &7%warehouse_nowfood% / %warehouse_maxfood%'
+        - '   &f伤害： &7%warehouse_damage%'
+        - ''
+  castSkill:
+    title: "&l宠物技能触发器"
+  unSkillTitle:
+    title: "&l宠物的未装载技能库"

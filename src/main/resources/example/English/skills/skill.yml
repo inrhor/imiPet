@@ -1,0 +1,85 @@
+skill:
+  # Unique skill ID
+  id: "MechaEngineering"
+  # From which dynamic ID
+  startAnimation: 1
+  animation:
+    # Dynamic ID
+    1:
+      # Optional item, mythicMobs
+      type: item
+      # if type is item
+      item:
+        # item material
+        material: PLAYER_HEAD
+        # item name
+        name: ""
+        # item Lore
+        lore:
+          - ""
+          - ""
+        # item CustomModelData
+        customModelData: 76382
+        # Whether there is gravity
+        gravity: true
+        # Release position
+        # 可选
+        #   addLocation:direction:multiplier:height
+        #      Value added based on the position of the releaser
+        #      direction: left right behind
+        #      The multiplier can be positive or negative, the bigger the farther
+        #      Height can be positive or negative
+        #   follow:direction:multiplier:height   Follow the releaser
+        castLocation: "addLocation:behind:-3:0"
+        # Skill script
+        # Optional
+        #   onlyAnimation  Dynamic only
+        #   animation:but_autoAim:Does the armor_stand nod and aim:Aiming target:range  Dynamically aim at targets within range
+        script: "animation:but_autoAim:false:all:10"
+        # Buff script
+        buff:
+          # MythicMobs:skill:How many seconds to trigger
+          script:
+            - "MythicMobs:AngrySludgePoison:3"
+          # How many seconds to execute the condition value
+          timeCondition: 3
+          # About the re-trigger effect
+          # Scan target (recommended time value is left blank or 0)   aim:Does the armor_stand nod and aim:Aiming target:range:Scan time:If there is no target, execute the next dynamic ID, otherwise trigger the effect again
+          # End when triggered (or leave it blank)   one_time
+          condition: "aim:false:all:10:3:2"
+      # Display duration, execute or not execute the next dynamic ID after the end, seconds
+      time: 5
+      # The next dynamic ID after the duration is full
+      # If not, leave it blank or leave it blank, this skill will be terminated
+      nextAnimationID: "2"
+    2:
+      type: "mythicMobs"
+      # if type is mythicMobs
+      mythicMobs:
+        # MythicMobsSkill:How many seconds to trigger
+        skills:
+          - "SummonSkeletons:2"
+      # Duration, execute or not execute the next dynamic ID after the end, seconds
+      time: 3
+      # The next dynamic ID after the duration is full
+      # If not, leave it blank or leave it blank, this skill will be terminated
+      nextAnimationID: "3"
+    3:
+      type: item
+      item:
+        material: APPLE
+        name: ""
+        lore:
+          - ""
+          - ""
+        customModelData: 76382
+        gravity: false
+        castLocation: "follow:behind:-3:0"
+        script: "animation:but_autoAim:false:all:10"
+        buff:
+          script:
+            - "MythicMobs:SmashAttack:3"
+          timeCondition: 3
+          condition: "aim:false:all:10:3:2"
+      time: 5
+      nextAnimationID: "1"

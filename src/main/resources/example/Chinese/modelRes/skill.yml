@@ -1,0 +1,39 @@
+skillModel:
+  # 技能ID，必须是已注册的技能ID，忽略大小写
+  # SkillID, must be a registered skillID
+  MechaEngineering:
+    # 技能的译名
+    name: "&f机甲工程"
+    animation:
+      # 动态ID
+      # 宠物模型动态动作从第一个动态ID开始运行
+      a:
+        # 是否启用ModelEngine模型引擎插件
+        # 播放动画要求名称为 skill-技能ID-动态ID 即skill-MechaEngineering-a
+        useModelEngine: false
+        # 物品名称 (如果不启用ModelEngine)
+        itemName: "§8§a"
+        # 模型数据，仅支持1.14+ (如果不启用ModelEngine)
+        customModelData: 10000
+        # 物品材料 (如果不启用ModelEngine)
+        material: "DIAMOND_HOE"
+        # 显示时长，秒，小于或等于0则无该动态
+        time: 10
+        # 下一个动态ID，无或留空则取消技能动态动作
+        nextAnimationID: "ha"
+      ha:
+        itemName: "§8§9"
+        customModelData: 10001
+        material: "DIAMOND_HOE"
+        time: 5
+    # 该技能冷却时长，秒，小于或等于0则无冷却
+    coolDown: 60
+    # 释放技能过程是否可以移动
+    canMove: true
+    # 触发条件，满足所有条件即可触发
+    #    food:消耗所需活力值
+    #    permission:权限
+    triggerList:
+      - "food:10"
+  # 可以添加更多SkillID
+  #xxx:

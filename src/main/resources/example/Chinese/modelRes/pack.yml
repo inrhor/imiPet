@@ -1,0 +1,7 @@
+# 是否自动生成纹理包
+autoSpawn: false
+# 纹理包类型
+#   optiFine
+#   customModelData
+#   all
+type: "optiFine"

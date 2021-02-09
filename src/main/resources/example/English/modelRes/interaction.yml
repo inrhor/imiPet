@@ -1,0 +1,17 @@
+# Interactive function
+interaction:
+  # Show pet info
+  info:
+    # enable?
+    enable: true
+    # hologram
+    hologram:
+      # Display duration (seconds)
+      stayTime: 6
+      stringList:
+        - "&fName： %imipet_name%"
+        - "&fHP %imipet_nowhp%&7/&f%imipet_maxhp%"
+      # Hologram location
+      x: 1
+      y: 1
+      z: 0
